@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./source/deep-learning-from-scratch-2/ch04"
+    ]
+}

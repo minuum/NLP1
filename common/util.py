@@ -301,3 +301,34 @@ def normalize(x):
         s = np.sqrt((x * x).sum())
         x /= s
     return x
+def most_similar(query, word_to_id, id_to_word, word_matrix, top=5, print_result=True):
+    if query not in word_to_id:
+        print('%s(을)를 찾을 수 없습니다.' % query)
+        return []
+
+    if print_result:
+        print('\n[query] ' + query)
+
+    query_id = word_to_id[query]
+    query_vec = word_matrix[query_id]
+
+    # 코사인 유사도 계산
+    vocab_size = len(id_to_word)
+    similarity = np.zeros(vocab_size)
+    for i in range(vocab_size):
+        similarity[i] = cos_similarity(word_matrix[i], query_vec)
+
+    # 상위 top개 단어 반환
+    result = []
+    count = 0
+    for i in (-1 * similarity).argsort():
+        if id_to_word[i] == query:
+            continue
+        result.append((id_to_word[i], similarity[i]))
+        if print_result:
+            print(f' {id_to_word[i]}: {similarity[i]:.4f}')
+        count += 1
+        if count >= top:
+            break
+
+    return result
