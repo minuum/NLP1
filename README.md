@@ -195,8 +195,8 @@ python exp_code/rp_dcg_eval_3.py
 
 ## 참고 자료
 
-- 실험 결과와 추가 분석은 `notebooks/` 디렉토리에서 확인할 수 있습니다.
-- 발표 자료는 `pdf/` 및 `자연어처리1 중간주제발표_250409/` 디렉토리에 있습니다.
+- 실험 결과와 추가 분석은 `exp_code/` 디렉토리에서 확인할 수 있습니다.
+- 발표 자료는 `pdf/` 안의 `자연어처리1 중간주제발표_250514.pdf/` 입니다.
 - [T5 원본 논문](https://arxiv.org/abs/1910.10683)
 - [Kaggle ArXiv 데이터셋](https://www.kaggle.com/datasets/Cornell-University/arxiv/data)
 - [Context Gates for Neural Machine Translation](https://arxiv.org/abs/1608.06043) (Tu et al., 2017)
