@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "t5-arxiv-title-generator"
+version = "0.1.0"
+description = "T5 model for generating titles from arXiv abstracts"
+authors = ["minwool0357@gmail.com"] # 사용자 정보로 수정
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = "^2.0.0" # Apple Silicon (MPS) 호환성 고려
+transformers = "^4.30.0" # Hugging Face Transformers 최신 버전 확인
+datasets = "^2.10.0"
+evaluate = "^0.4.0"
+sentence-transformers = "^2.2.0"
+scikit-learn = "^1.3.0"
+nltk = "^3.8.0"
+pandas = "^2.0.0"
+kagglehub = {version = "^0.2.0", extras = ["pandas-datasets"], optional = true}
+absl-py = "^1.4.0"
+rouge-score = "^0.1.2"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.0"
+pytest = "^7.0"
+black = "^23.0"
+flake8 = "^6.0"
+
+[tool.poetry.extras]
+kaggle = ["kagglehub"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
